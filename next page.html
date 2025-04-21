@@ -6,29 +6,29 @@
     <title>Ananda's Project</title>
     <style>
       :root {
-        --deep-green: #762e3f; /* Updated to darker olive green */
-        --medium-green: #a55166; /* Medium shade between the two colors */
-        --light-green: #b99099; /* Updated to lighter lime/olive green */
-        --pale-green: #f3f5e6; /* Lighter version of the light green */
-        --soft-accent: #eeaac3; /* A medium-soft shade for accents */
-        --bright-accent: #a24c61; /* Brighter accent color */
-        --accent-glow: 0 0 5px #641a23; /* Glow effect for elements */
+        --deep-red: #762e3f; /* Deep burgundy red */
+        --medium-red: #a55166; /* Medium shade red */
+        --light-red: #b99099; /* Lighter rose red */
+        --pale-red: #f9ecef; /* Very light pink background */
+        --soft-red: #eeaac3; /* Soft pink accent */
+        --bright-red: #a24c61; /* Brighter accent red */
+        --accent-glow: 0 0 5px rgba(100, 26, 35, 0.7); /* Glow effect for elements */
       }
 
       body {
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         margin: 0;
         padding: 0;
-        background-color: var(--pale-green);
+        background-color: var(--pale-red);
         color: #333;
       }
 
       header {
-        background: linear-gradient(135deg, var(--deep-green), var(--light-green));
+        background: linear-gradient(135deg, var(--deep-red), var(--light-red));
         color: white;
         text-align: center;
         padding: 2rem 0;
-        box-shadow: 0 4px 12px #641a23;
+        box-shadow: 0 4px 12px rgba(100, 26, 35, 0.3);
       }
 
       h1 {
@@ -63,16 +63,16 @@
         overflow: hidden;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
-        border: 1px solid var(--medium-green);
+        border: 1px solid var(--medium-red);
       }
 
       .project-card:hover {
         transform: translateY(-5px);
-        box-shadow: 0 8px 16px rgba(94, 102, 35, 0.4), 0 0 20px rgba(212, 217, 148, 0.3);
+        box-shadow: 0 8px 16px rgba(118, 46, 63, 0.4), 0 0 20px rgba(185, 144, 153, 0.3);
       }
 
       .card-header {
-        background: linear-gradient(to right, var(--bright-accent), var(--deep-green));
+        background: linear-gradient(to right, var(--bright-red), var(--deep-red));
         color: white;
         padding: 1rem;
       }
@@ -100,7 +100,7 @@
 
       .tag {
         display: inline-block;
-        background-color: var(--pale-pink);
+        background-color: var(--light-red);
         color: var(--deep-red);
         padding: 0.3rem 0.8rem;
         border-radius: 20px;
@@ -112,24 +112,24 @@
 
       .btn {
         display: inline-block;
-        background-color: var(--bright-accent);
+        background-color: var(--bright-red);
         color: white;
         text-decoration: none;
         padding: 0.6rem 1.2rem;
         border-radius: 5px;
         font-weight: bold;
         transition: all 0.3s ease;
-        box-shadow: 0 0 8px #762e3f;
+        box-shadow: 0 0 8px rgba(118, 46, 63, 0.5);
       }
 
       .btn:hover {
-        background-color: var(--deep-green);
-        box-shadow: 0 0 12px #e7c0bc;
+        background-color: var(--deep-red);
+        box-shadow: 0 0 12px rgba(238, 170, 195, 0.8);
         transform: scale(1.05);
       }
 
       footer {
-        background: linear-gradient(135deg, var(--deep-green), var(--light-green));
+        background: linear-gradient(135deg, var(--deep-red), var(--light-red));
         color: white;
         text-align: center;
         padding: 1.5rem 0;
@@ -149,7 +149,7 @@
         left: 0;
         width: 100%;
         height: 3px;
-        background: linear-gradient(to right, var(--deep-green), var(--light-green));
+        background: linear-gradient(to right, var(--deep-red), var(--light-red));
         box-shadow: var(--accent-glow);
       }
 
