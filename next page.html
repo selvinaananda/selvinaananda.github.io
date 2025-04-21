@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,37 +6,42 @@
     <title>Ananda's Project</title>
     <style>
       :root {
-        --deep-purple: #663399;
-        --medium-purple: #9370db;
-        --lilac: #c8a2c8;
-        --light-lilac: #e6e6fa;
+        --deep-green: #2ac466; /* Hijau neon Mitsuri */
+        --medium-green: #3dfc84; /* Hijau Medium neon */
+        --light-green: #a5ffcc; /* Hijau Muda */
+        --pale-green: #e8fff2; /* Hijau Pucat */
+        --soft-pink: #ff6eb4; /* Pink Mitsuri lebih terang */
+        --bright-pink: #ff45a0; /* Pink neon Mitsuri */
+        --neon-glow: 0 0 5px rgba(255, 105, 180, 0.7); /* Efek neon untuk elemen */
       }
 
       body {
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         margin: 0;
         padding: 0;
-        background-color: var(--light-lilac);
+        background-color: var(--pale-green);
         color: #333;
       }
 
       header {
-        background-color: var(--deep-purple);
+        background: linear-gradient(135deg, var(--deep-green), var(--bright-pink));
         color: white;
         text-align: center;
         padding: 2rem 0;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 12px rgba(255, 105, 180, 0.3);
       }
 
       h1 {
         margin: 0;
         font-size: 2.5rem;
+        text-shadow: var(--neon-glow);
       }
 
       .subtitle {
         font-style: italic;
-        color: var(--light-lilac);
+        color: white;
         margin-top: 0.5rem;
+        text-shadow: var(--neon-glow);
       }
 
       .container {
@@ -59,15 +63,16 @@
         overflow: hidden;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 1px solid var(--medium-green);
       }
 
       .project-card:hover {
         transform: translateY(-5px);
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 8px 16px rgba(255, 110, 180, 0.4), 0 0 20px rgba(61, 252, 132, 0.3);
       }
 
       .card-header {
-        background-color: var(--medium-purple);
+        background: linear-gradient(to right, var(--bright-pink), var(--deep-green));
         color: white;
         padding: 1rem;
       }
@@ -79,12 +84,13 @@
       .project-title {
         margin: 0;
         font-size: 1.3rem;
+        text-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
       }
 
       .project-date {
         margin-top: 0.3rem;
         font-size: 0.8rem;
-        color: var(--light-lilac);
+        color: white;
       }
 
       .project-description {
@@ -94,36 +100,57 @@
 
       .tag {
         display: inline-block;
-        background-color: var(--lilac);
-        color: var(--deep-purple);
+        background-color: var(--light-green);
+        color: var(--deep-green);
         padding: 0.3rem 0.8rem;
         border-radius: 20px;
         font-size: 0.8rem;
         margin-right: 0.5rem;
         margin-bottom: 0.5rem;
+        border: 1px solid var(--deep-green);
       }
 
       .btn {
         display: inline-block;
-        background-color: var(--deep-purple);
+        background-color: var(--bright-pink);
         color: white;
         text-decoration: none;
         padding: 0.6rem 1.2rem;
         border-radius: 5px;
         font-weight: bold;
-        transition: background-color 0.3s ease;
+        transition: all 0.3s ease;
+        box-shadow: 0 0 8px rgba(255, 105, 180, 0.5);
       }
 
       .btn:hover {
-        background-color: var(--medium-purple);
+        background-color: var(--deep-green);
+        box-shadow: 0 0 12px rgba(61, 252, 132, 0.8);
+        transform: scale(1.05);
       }
 
       footer {
-        background-color: var(--deep-purple);
+        background: linear-gradient(135deg, var(--bright-pink), var(--deep-green));
         color: white;
         text-align: center;
         padding: 1.5rem 0;
         margin-top: 3rem;
+      }
+
+      h2 {
+        position: relative;
+        display: inline-block;
+        padding-bottom: 5px;
+      }
+
+      h2:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(to right, var(--bright-pink), var(--deep-green));
+        box-shadow: var(--neon-glow);
       }
 
       /* Add responsive design */
@@ -161,9 +188,19 @@
           </div>
 
           <div class="card-body">
-            <p class="project-description">
-              Font adalah kumpulan huruf, angka, simbol, dan karakter lainnya yang memiliki gaya tertentu yang mencakup berbagai gaya dan ukuran.
-            </p>
+            <p class="project-description">Font adalah kumpulan karakter dengan gaya dan ukuran tertentu yang konsisten dalam desain visualnya.</p>
+            <div class="tags">
+              <span class="tag">Times New Roman</span>
+              <span class="tag">Arial</span>
+              <span class="tag">Helvetica</span>
+              <span class="tag">Calibri</span>
+              <span class="tag">Verdana</span>
+              <span class="tag">Comic Sans MS</span>
+              <span class="tag">Georgia</span>
+              <span class="tag">Tahoma</span>
+              <span class="tag">Century Gothic</span>
+              <span class="tag">Courier New</span>
+            </div>
             <a href="#" class="btn">Lihat Project</a>
           </div>
         </div>
@@ -174,10 +211,19 @@
             <h3 class="project-title">Image</h3>
           </div>
           <div class="card-body">
-            <p class="project-description">
-              Gambar adalah representasi visual dari objek, konsep, atau ide yang dibuat dengan menggunakan berbagai medium seperti pensil, cat,
-              tinta, kamera, atau perangkat lunak komputer.
-            </p>
+            <p class="project-description">Gambar adalah representasi visual dari objek, konsep, atau ide melalui berbagai medium.</p>
+            <div class="tags">
+              <span class="tag">JPEG</span>
+              <span class="tag">PNG</span>
+              <span class="tag">GIF</span>
+              <span class="tag">BMP</span>
+              <span class="tag">TIFF</span>
+              <span class="tag">SVG</span>
+              <span class="tag">HEIF</span>
+              <span class="tag">WEBP</span>
+              <span class="tag">PSD</span>
+              <span class="tag">RAW</span>
+            </div>
             <a href="#" class="btn">Lihat Project</a>
           </div>
         </div>
@@ -186,15 +232,22 @@
         <div class="project-card">
           <div class="card-header">
             <h3 class="project-title">Audio</h3>
-            </div>
+          </div>
           <div class="card-body">
             <p class="project-description">
-              Desain antarmuka pengguna dan pengalaman pengguna untuk aplikasi belanja online dengan fokus pada aksesibilitas.
+              Audio adalah gelombang suara yang dapat direkam, disimpan, dan diputar kembali dalam bentuk digital atau analog.
             </p>
             <div class="tags">
-              <span class="tag">UI Design</span>
-              <span class="tag">Figma</span>
-              <span class="tag">Prototype</span>
+              <span class="tag">MP3</span>
+              <span class="tag">WAV</span>
+              <span class="tag">AAC</span>
+              <span class="tag">FLAC</span>
+              <span class="tag">OGG</span>
+              <span class="tag">WMA</span>
+              <span class="tag">AIFF</span>
+              <span class="tag">ALAC</span>
+              <span class="tag">OPUS</span>
+              <span class="tag">AMR</span>
             </div>
             <a href="#" class="btn">Lihat Project</a>
           </div>
@@ -203,15 +256,23 @@
         <!-- Project 4 -->
         <div class="project-card">
           <div class="card-header">
-            <h3 class="project-title">Data Analysis Dashboard</h3>
-            <p class="project-date">Januari 2025</p>
+            <h3 class="project-title">Animasi</h3>
           </div>
           <div class="card-body">
-            <p class="project-description">Dashboard visualisasi data interaktif untuk menganalisis tren penjualan dan perilaku pengguna.</p>
+            <p class="project-description">
+              Animasi adalah proses membuat gambar atau objek terlihat hidup dengan menampilkan serangkaian gambar berurutan.
+            </p>
             <div class="tags">
-              <span class="tag">Data Viz</span>
-              <span class="tag">React</span>
-              <span class="tag">D3.js</span>
+              <span class="tag">2D</span>
+              <span class="tag">3D</span>
+              <span class="tag">Stop Motion</span>
+              <span class="tag">Whiteboard Animation</span>
+              <span class="tag">Motion Graphics</span>
+              <span class="tag">Cut-out Animation</span>
+              <span class="tag">Animasi Siluet</span>
+              <span class="tag">Animasi Hybrid</span>
+              <span class="tag">Animasi Eksperimental</span>
+              <span class="tag">Animasi Web </span>
             </div>
             <a href="#" class="btn">Lihat Project</a>
           </div>
@@ -220,17 +281,23 @@
         <!-- Project 5 -->
         <div class="project-card">
           <div class="card-header">
-            <h3 class="project-title">Mobile App Redesign</h3>
-            <p class="project-date">Desember 2024</p>
+            <h3 class="project-title">Video</h3>
           </div>
           <div class="card-body">
             <p class="project-description">
-              Perancangan ulang antarmuka aplikasi mobile dengan pendekatan yang lebih modern dan berfokus pada pengguna.
+              Animasi adalah proses membuat objek diam terlihat hidup dengan menampilkan serangkaian gambar secara berurutan dan bergerak.
             </p>
             <div class="tags">
-              <span class="tag">Mobile UI</span>
-              <span class="tag">Adobe XD</span>
-              <span class="tag">User Testing</span>
+              <span class="tag">MP4</span>
+              <span class="tag">AVI</span>
+              <span class="tag">MKV</span>
+              <span class="tag">MOV</span>
+              <span class="tag">FLV</span>
+              <span class="tag">WMV</span>
+              <span class="tag">3GP</span>
+              <span class="tag">WebM</span>
+              <span class="tag">MPEG</span>
+              <span class="tag">AVCHID</span>
             </div>
             <a href="#" class="btn">Lihat Project</a>
           </div>
@@ -240,7 +307,6 @@
         <div class="project-card">
           <div class="card-header">
             <h3 class="project-title">Landing Page</h3>
-            <p class="project-date">November 2024</p>
           </div>
           <div class="card-body">
             <p class="project-description">Halaman landing page responsif untuk kampanye pemasaran produk baru dengan fokus pada konversi.</p>
