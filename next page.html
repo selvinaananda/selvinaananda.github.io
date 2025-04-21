@@ -1,1 +1,262 @@
 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ananda's Project</title>
+    <style>
+      :root {
+        --deep-purple: #663399;
+        --medium-purple: #9370db;
+        --lilac: #c8a2c8;
+        --light-lilac: #e6e6fa;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: var(--light-lilac);
+        color: #333;
+      }
+
+      header {
+        background-color: var(--deep-purple);
+        color: white;
+        text-align: center;
+        padding: 2rem 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 2.5rem;
+      }
+
+      .subtitle {
+        font-style: italic;
+        color: var(--light-lilac);
+        margin-top: 0.5rem;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+      }
+
+      .project-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+
+      .project-card {
+        background-color: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      }
+
+      .card-header {
+        background-color: var(--medium-purple);
+        color: white;
+        padding: 1rem;
+      }
+
+      .card-body {
+        padding: 1.5rem;
+      }
+
+      .project-title {
+        margin: 0;
+        font-size: 1.3rem;
+      }
+
+      .project-date {
+        margin-top: 0.3rem;
+        font-size: 0.8rem;
+        color: var(--light-lilac);
+      }
+
+      .project-description {
+        margin-bottom: 1rem;
+        line-height: 1.5;
+      }
+
+      .tag {
+        display: inline-block;
+        background-color: var(--lilac);
+        color: var(--deep-purple);
+        padding: 0.3rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        margin-right: 0.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .btn {
+        display: inline-block;
+        background-color: var(--deep-purple);
+        color: white;
+        text-decoration: none;
+        padding: 0.6rem 1.2rem;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+      }
+
+      .btn:hover {
+        background-color: var(--medium-purple);
+      }
+
+      footer {
+        background-color: var(--deep-purple);
+        color: white;
+        text-align: center;
+        padding: 1.5rem 0;
+        margin-top: 3rem;
+      }
+
+      /* Add responsive design */
+      @media (max-width: 768px) {
+        .project-grid {
+          grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        }
+      }
+
+      @media (max-width: 480px) {
+        .project-grid {
+          grid-template-columns: 1fr;
+        }
+
+        h1 {
+          font-size: 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>My Project Showcase</h1>
+      <p class="subtitle">Selviana Ananda's Project</p>
+    </header>
+
+    <div class="container">
+      <h2>Project Terbaru</h2>
+
+      <div class="project-grid">
+        <!-- Project 1 -->
+        <div class="project-card">
+          <div class="card-header">
+            <h3 class="project-title">Font</h3>
+          </div>
+
+          <div class="card-body">
+            <p class="project-description">
+              Font adalah kumpulan huruf, angka, simbol, dan karakter lainnya yang memiliki gaya tertentu yang mencakup berbagai gaya dan ukuran.
+            </p>
+            <a href="#" class="btn">Lihat Project</a>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card">
+          <div class="card-header">
+            <h3 class="project-title">Image</h3>
+          </div>
+          <div class="card-body">
+            <p class="project-description">
+              Gambar adalah representasi visual dari objek, konsep, atau ide yang dibuat dengan menggunakan berbagai medium seperti pensil, cat,
+              tinta, kamera, atau perangkat lunak komputer.
+            </p>
+            <a href="#" class="btn">Lihat Project</a>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card">
+          <div class="card-header">
+            <h3 class="project-title">Audio</h3>
+            </div>
+          <div class="card-body">
+            <p class="project-description">
+              Desain antarmuka pengguna dan pengalaman pengguna untuk aplikasi belanja online dengan fokus pada aksesibilitas.
+            </p>
+            <div class="tags">
+              <span class="tag">UI Design</span>
+              <span class="tag">Figma</span>
+              <span class="tag">Prototype</span>
+            </div>
+            <a href="#" class="btn">Lihat Project</a>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card">
+          <div class="card-header">
+            <h3 class="project-title">Data Analysis Dashboard</h3>
+            <p class="project-date">Januari 2025</p>
+          </div>
+          <div class="card-body">
+            <p class="project-description">Dashboard visualisasi data interaktif untuk menganalisis tren penjualan dan perilaku pengguna.</p>
+            <div class="tags">
+              <span class="tag">Data Viz</span>
+              <span class="tag">React</span>
+              <span class="tag">D3.js</span>
+            </div>
+            <a href="#" class="btn">Lihat Project</a>
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="project-card">
+          <div class="card-header">
+            <h3 class="project-title">Mobile App Redesign</h3>
+            <p class="project-date">Desember 2024</p>
+          </div>
+          <div class="card-body">
+            <p class="project-description">
+              Perancangan ulang antarmuka aplikasi mobile dengan pendekatan yang lebih modern dan berfokus pada pengguna.
+            </p>
+            <div class="tags">
+              <span class="tag">Mobile UI</span>
+              <span class="tag">Adobe XD</span>
+              <span class="tag">User Testing</span>
+            </div>
+            <a href="#" class="btn">Lihat Project</a>
+          </div>
+        </div>
+
+        <!-- Project 6 -->
+        <div class="project-card">
+          <div class="card-header">
+            <h3 class="project-title">Landing Page</h3>
+            <p class="project-date">November 2024</p>
+          </div>
+          <div class="card-body">
+            <p class="project-description">Halaman landing page responsif untuk kampanye pemasaran produk baru dengan fokus pada konversi.</p>
+            <div class="tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">Responsive</span>
+            </div>
+            <a href="#" class="btn">Lihat Project</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2025 My Project Showcase. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
