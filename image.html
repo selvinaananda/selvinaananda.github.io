@@ -407,34 +407,5 @@
     <footer>
       <p>&copy; Created by Selviana Ananda. All rights reserved.</p>
     </footer>
-
-    <script>
-      function previewImage(input, previewId) {
-        const preview = document.getElementById(previewId);
-        const infoId = previewId.replace("-preview", "-info");
-        const infoElement = document.getElementById(infoId);
-
-        if (input.files && input.files[0]) {
-          const file = input.files[0];
-          const reader = new FileReader();
-
-          reader.onload = function (e) {
-            // Clear preview
-            preview.innerHTML = "";
-
-            // Create image element
-            const img = document.createElement("img");
-            img.src = e.target.result;
-            preview.appendChild(img);
-
-            // Update file info
-            const size = (file.size / 1024).toFixed(2);
-            infoElement.textContent = `${file.name} (${size} KB)`;
-          };
-
-          reader.readAsDataURL(file);
-        }
-      }
-    </script>
   </body>
 </html>
