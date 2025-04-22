@@ -1,163 +1,163 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>10 Famous Font</title>
-    <style>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>10 Famous Font</title>
+        <style>
         :root {
-        --deep-burgundy: #48182f; /* Deep burgundy */
-        --medium-burgundy: #6a2647; /* Medium shade burgundy */
-        --light-burgundy: #8c345e; /* Lighter burgundy */
-        --cream-gray: #d4cbc4; /* Cream gray */
-        --light-cream: #e8e3df; /* Lighter cream */
-        --dark-cream: #b8afa7; /* Darker cream */
-        --accent-glow: 0 0 5px rgba(72, 24, 47, 0.7); /* Glow effect for elements */
-    }
+            --deep-burgundy: #48182f; /* Deep burgundy */
+            --medium-burgundy: #6a2647; /* Medium shade burgundy */
+            --light-burgundy: #8c345e; /* Lighter burgundy */
+            --cream-gray: #d4cbc4; /* Cream gray */
+            --light-cream: #e8e3df; /* Lighter cream */
+            --dark-cream: #b8afa7; /* Darker cream */
+            --accent-glow: 0 0 5px rgba(72, 24, 47, 0.7); /* Glow effect for elements */
+        }
 
-    body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: var(--light-cream);
-        color: #333;
-    }
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-cream);
+            color: #333;
+        }
 
-    header {
-        background: linear-gradient(135deg, var(--deep-burgundy), var(--light-burgundy));
-        color: white;
-        text-align: center;
-        padding: 2rem 0;
-        box-shadow: 0 4px 12px rgba(72, 24, 47, 0.3);
-    }
+        header {
+            background: linear-gradient(135deg, var(--deep-burgundy), var(--light-burgundy));
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            box-shadow: 0 4px 12px rgba(72, 24, 47, 0.3);
+        }
 
-    h1 {
-        margin: 0;
-        font-size: 2.5rem;
-        text-shadow: var(--accent-glow);
-    }
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            text-shadow: var(--accent-glow);
+        }
 
-    .subtitle {
-        font-style: italic;
-        color: white;
-        margin-top: 0.5rem;
-        text-shadow: var(--accent-glow);
-    }
+        .subtitle {
+            font-style: italic;
+            color: white;
+            margin-top: 0.5rem;
+            text-shadow: var(--accent-glow);
+        }
 
-    .container {
-        max-width: 1200px;
-        margin: 2rem auto;
-        padding: 0 1rem;
-    }
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
 
-    .font-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-        gap: 2rem;
-        margin-top: 2rem;
-    }
+        .font-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
 
-    .font-card {
-        background-color: white;
-        border-radius: 10px;
-        overflow: hidden;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        border: 1px solid var(--cream-gray);
-    }
+        .font-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--cream-gray);
+        }
 
-    .font-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 16px rgba(72, 24, 47, 0.4), 0 0 20px rgba(212, 203, 196, 0.3);
-    }
+        .font-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(72, 24, 47, 0.4), 0 0 20px rgba(212, 203, 196, 0.3);
+        }
 
-    .card-header {
-        background: linear-gradient(to right, var(--medium-burgundy), var(--deep-burgundy));
-        color: white;
-        padding: 1rem;
-    }
+        .card-header {
+            background: linear-gradient(to right, var(--medium-burgundy), var(--deep-burgundy));
+            color: white;
+            padding: 1rem;
+        }
 
-    .card-body {
-        padding: 1.5rem;
-    }
+        .card-body {
+            padding: 1.5rem;
+        }
 
-    .font-title {
-        margin: 0;
-        font-size: 1.3rem;
-        text-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
-    }
+        .font-title {
+            margin: 0;
+            font-size: 1.3rem;
+            text-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
+        }
 
-    .font-sample {
-        font-size: 2rem;
-        margin: 1rem 0;
-        line-height: 1.2;
-    }
+        .font-sample {
+            font-size: 2rem;
+            margin: 1rem 0;
+            line-height: 1.2;
+        }
 
-    .font-sample-text {
-        font-size: 1.2rem;
-        margin-bottom: 1rem;
-        line-height: 1.5;
-    }
+        .font-sample-text {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
 
-    .font-details {
-        margin-bottom: 1rem;
-    }
+        .font-details {
+            margin-bottom: 1rem;
+        }
 
-    .tag {
-        display: inline-block;
-        background-color: var(--cream-gray);
-        color: var(--deep-burgundy);
-        padding: 0.3rem 0.8rem;
-        border-radius: 20px;
-        font-size: 0.8rem;
-        margin-right: 0.5rem;
-        margin-bottom: 0.5rem;
-        border: 1px solid var(--deep-burgundy);
-    }
+        .tag {
+            display: inline-block;
+            background-color: var(--cream-gray);
+            color: var(--deep-burgundy);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            border: 1px solid var(--deep-burgundy);
+        }
 
-    .btn {
-        display: inline-block;
-        background-color: var(--medium-burgundy);
-        color: white;
-        text-decoration: none;
-        padding: 0.6rem 1.2rem;
-        border-radius: 5px;
-        font-weight: bold;
-        transition: all 0.3s ease;
-        box-shadow: 0 0 8px rgba(72, 24, 47, 0.5);
-    }
+        .btn {
+            display: inline-block;
+            background-color: var(--medium-burgundy);
+            color: white;
+            text-decoration: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 8px rgba(72, 24, 47, 0.5);
+        }
 
-    .btn:hover {
-        background-color: var(--deep-burgundy);
-        box-shadow: 0 0 12px rgba(212, 203, 196, 0.8);
-        transform: scale(1.05);
-    }
+        .btn:hover {
+            background-color: var(--deep-burgundy);
+            box-shadow: 0 0 12px rgba(212, 203, 196, 0.8);
+            transform: scale(1.05);
+        }
 
-    footer {
-        background: linear-gradient(135deg, var(--deep-burgundy), var(--light-burgundy));
-        color: white;
-        text-align: center;
-        padding: 1.5rem 0;
-        margin-top: 3rem;
-    }
-    
-    h2 {
-        position: relative;
-        display: inline-block;
-        padding-bottom: 5px;
-        color: var(--deep-burgundy);
-    }
+        footer {
+            background: linear-gradient(135deg, var(--deep-burgundy), var(--light-burgundy));
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 3rem;
+        }
 
-    h2:after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 3px;
-        background: linear-gradient(to right, var(--deep-burgundy), var(--medium-burgundy));
-        box-shadow: var(--accent-glow);
-    }
+        h2 {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 5px;
+            color: var(--deep-burgundy);
+        }
+
+        h2:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, var(--deep-burgundy), var(--medium-burgundy));
+            box-shadow: var(--accent-glow);
+        }
 
         .times {
             font-family: "Times New Roman", Times, serif;
