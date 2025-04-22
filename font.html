@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>10 Famous Font</title>
     <style>
-      :root {
+        :root {
         --deep-burgundy: #48182f; /* Deep burgundy */
         --medium-burgundy: #6a2647; /* Medium shade burgundy */
         --light-burgundy: #8c345e; /* Lighter burgundy */
@@ -13,97 +13,97 @@
         --light-cream: #e8e3df; /* Lighter cream */
         --dark-cream: #b8afa7; /* Darker cream */
         --accent-glow: 0 0 5px rgba(72, 24, 47, 0.7); /* Glow effect for elements */
-      }
+    }
 
-      body {
+    body {
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         margin: 0;
         padding: 0;
         background-color: var(--light-cream);
         color: #333;
-      }
+    }
 
-      header {
+    header {
         background: linear-gradient(135deg, var(--deep-burgundy), var(--light-burgundy));
         color: white;
         text-align: center;
         padding: 2rem 0;
         box-shadow: 0 4px 12px rgba(72, 24, 47, 0.3);
-      }
+    }
 
-      h1 {
+    h1 {
         margin: 0;
         font-size: 2.5rem;
         text-shadow: var(--accent-glow);
-      }
+    }
 
-      .subtitle {
+    .subtitle {
         font-style: italic;
         color: white;
         margin-top: 0.5rem;
         text-shadow: var(--accent-glow);
-      }
+    }
 
-      .container {
+    .container {
         max-width: 1200px;
         margin: 2rem auto;
         padding: 0 1rem;
-      }
+    }
 
-      .font-grid {
+    .font-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
         gap: 2rem;
         margin-top: 2rem;
-      }
+    }
 
-      .font-card {
+    .font-card {
         background-color: white;
         border-radius: 10px;
         overflow: hidden;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         border: 1px solid var(--cream-gray);
-      }
+    }
 
-      .font-card:hover {
+    .font-card:hover {
         transform: translateY(-5px);
         box-shadow: 0 8px 16px rgba(72, 24, 47, 0.4), 0 0 20px rgba(212, 203, 196, 0.3);
-      }
+    }
 
-      .card-header {
+    .card-header {
         background: linear-gradient(to right, var(--medium-burgundy), var(--deep-burgundy));
         color: white;
         padding: 1rem;
-      }
+    }
 
-      .card-body {
+    .card-body {
         padding: 1.5rem;
-      }
+    }
 
-      .font-title {
+    .font-title {
         margin: 0;
         font-size: 1.3rem;
         text-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
-      }
+    }
 
-      .font-sample {
+    .font-sample {
         font-size: 2rem;
         margin: 1rem 0;
         line-height: 1.2;
-      }
+    }
 
-      .font-sample-text {
+    .font-sample-text {
         font-size: 1.2rem;
         margin-bottom: 1rem;
         line-height: 1.5;
-      }
+    }
 
-      .font-details {
+    .font-details {
         margin-bottom: 1rem;
-      }
+    }
 
-      .tag {
+    .tag {
         display: inline-block;
         background-color: var(--cream-gray);
         color: var(--deep-burgundy);
@@ -113,9 +113,9 @@
         margin-right: 0.5rem;
         margin-bottom: 0.5rem;
         border: 1px solid var(--deep-burgundy);
-      }
+    }
 
-      .btn {
+    .btn {
         display: inline-block;
         background-color: var(--medium-burgundy);
         color: white;
@@ -125,30 +125,30 @@
         font-weight: bold;
         transition: all 0.3s ease;
         box-shadow: 0 0 8px rgba(72, 24, 47, 0.5);
-      }
+    }
 
-      .btn:hover {
+    .btn:hover {
         background-color: var(--deep-burgundy);
         box-shadow: 0 0 12px rgba(212, 203, 196, 0.8);
         transform: scale(1.05);
-      }
+    }
 
-      footer {
+    footer {
         background: linear-gradient(135deg, var(--deep-burgundy), var(--light-burgundy));
         color: white;
         text-align: center;
         padding: 1.5rem 0;
         margin-top: 3rem;
-      }
-
-      h2 {
+    }
+    
+    h2 {
         position: relative;
         display: inline-block;
         padding-bottom: 5px;
         color: var(--deep-burgundy);
-      }
+    }
 
-      h2:after {
+    h2:after {
         content: "";
         position: absolute;
         bottom: 0;
@@ -157,262 +157,253 @@
         height: 3px;
         background: linear-gradient(to right, var(--deep-burgundy), var(--medium-burgundy));
         box-shadow: var(--accent-glow);
-      }
+    }
 
-      .times {
-        font-family: "Times New Roman", Times, serif;
-      }
-      .arial {
-        font-family: Arial, Helvetica, sans-serif;
-      }
-      .helvetica {
-        font-family: Helvetica, Arial, sans-serif;
-      }
-      .calibri {
-        font-family: Calibri, "Segoe UI", sans-serif;
-      }
-      .verdana {
-        font-family: Verdana, Geneva, sans-serif;
-      }
-      .comic {
-        font-family: "Comic Sans MS", cursive, sans-serif;
-      }
-      .georgia {
-        font-family: Georgia, serif;
-      }
-      .tahoma {
-        font-family: Tahoma, Geneva, Verdana, sans-serif;
-      }
-      .century {
-        font-family: "Century Gothic", sans-serif;
-      }
-      .courier {
-        font-family: "Courier New", Courier, monospace;
-      }
-
-      /* Add responsive design */
-      @media (max-width: 768px) {
-        .font-grid {
-          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        .times {
+            font-family: "Times New Roman", Times, serif;
         }
-      }
-
-      @media (max-width: 480px) {
-        .font-grid {
-          grid-template-columns: 1fr;
+        .arial {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .helvetica {
+            font-family: Helvetica, Arial, sans-serif;
+        }
+        .calibri {
+            font-family: Calibri, "Segoe UI", sans-serif;
+        }
+        .verdana {
+            font-family: Verdana, Geneva, sans-serif;
+        }
+        .comic {
+            font-family: "Comic Sans MS", cursive, sans-serif;
+        }
+        .georgia {
+            font-family: Georgia, serif;
+        }
+        .tahoma {
+            font-family: Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .century {
+            font-family: "Century Gothic", sans-serif;
+        }
+        .courier {
+            font-family: "Courier New", Courier, monospace;
         }
 
-        h1 {
-          font-size: 2rem;
+        /* Add responsive design */
+        @media (max-width: 768px) {
+            .font-grid {
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
         }
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <h1>Font</h1>
-      <p class="subtitle">Koleksi 10 Font Populer</p>
-    </header>
 
-    <div class="container">
-      <h2>Font</h2>
+        @media (max-width: 480px) {
+            .font-grid {
+            grid-template-columns: 1fr;
+            }
 
-      <div class="font-grid">
-        <!-- Font 1: Times New Roman -->
-        <div class="font-card">
-          <div class="card-header">
-            <h3 class="font-title">Times New Roman</h3>
-          </div>
+            h1 {
+            font-size: 2rem;
+            }
+        }
+        </style>
+    </head>
+    <body>
+        <header>
+        <h1>Font Showcase</h1>
+        <p class="subtitle">Koleksi 10 Font Populer</p>
+        </header>
 
-          <div class="card-body">
-            <div class="font-sample times">Aa Bb Cc 123</div>
-            <div class="font-sample-text times">The quick brown fox jumps over the lazy dog.</div>
-            <div class="font-details">
-              <p>Font yang sering digunakan untuk dokumen formal dan akademis.</p>
+        <div class="container">
+        <h2>Showcase Font</h2>
+
+        <div class="font-grid">
+            <!-- Font 1: Times New Roman -->
+            <div class="font-card">
+            <div class="card-header">
+                <h3 class="font-title">Times New Roman</h3>
             </div>
-            <div class="tags">
-              <span class="tag">Serif</span>
-              <span class="tag">Formal</span>
-              <span class="tag">Akademis</span>
+
+            <div class="card-body">
+                <div class="font-sample times">Aa Bb Cc 123</div>
+                <div class="font-sample-text times">The quick brown fox jumps over the lazy dog.</div>
+                <div class="font-details">
+                <p>Font yang sering digunakan untuk dokumen formal dan akademis.</p>
+                </div>
+                <div class="tags">
+                <span class="tag">Formal</span>
+                <span class="tag">Akademis</span>
+                </div>
             </div>
-          </div>
+            </div>
+
+            <!-- Font 2: Arial -->
+            <div class="font-card">
+            <div class="card-header">
+                <h3 class="font-title">Arial</h3>
+            </div>
+            <div class="card-body">
+                <div class="font-sample arial">Aa Bb Cc 123</div>
+                <div class="font-sample-text arial">The quick brown fox jumps over the lazy dog.</div>
+                <div class="font-details">
+                <p>Font yang sangat jelas dan sederhana.</p>
+                </div>
+                <div class="tags">
+                <span class="tag">Web-safe</span>
+                <span class="tag">Modern</span>
+                </div>
+            </div>
+            </div>
+
+            <!-- Font 3: Helvetica -->
+            <div class="font-card">
+            <div class="card-header">
+                <h3 class="font-title">Helvetica</h3>
+            </div>
+            <div class="card-body">
+                <div class="font-sample helvetica">Aa Bb Cc 123</div>
+                <div class="font-sample-text helvetica">The quick brown fox jumps over the lazy dog.</div>
+                <div class="font-details">
+                <p>Font yang banyak digunakan dalam desain grafis.</p>
+                </div>
+                <div class="tags">
+                <span class="tag">Desain</span>
+                <span class="tag">Profesional</span>
+                </div>
+            </div>
+            </div>
+
+            <!-- Font 4: Calibri -->
+            <div class="font-card">
+            <div class="card-header">
+                <h3 class="font-title">Calibri</h3>
+            </div>
+            <div class="card-body">
+                <div class="font-sample calibri">Aa Bb Cc 123</div>
+                <div class="font-sample-text calibri">The quick brown fox jumps over the lazy dog.</div>
+                <div class="font-details">
+                <p>Font default dari Microsoft Office dengan bentuk modern.</p>
+                </div>
+                <div class="tags">
+                <span class="tag">Bisnis</span>
+                <span class="tag">Office</span>
+                </div>
+            </div>
+            </div>
+
+            <!-- Font 5: Verdana -->
+            <div class="font-card">
+            <div class="card-header">
+                <h3 class="font-title">Verdana</h3>
+            </div>
+            <div class="card-body">
+                <div class="font-sample verdana">Aa Bb Cc 123</div>
+                <div class="font-sample-text verdana">The quick brown fox jumps over the lazy dog.</div>
+                <div class="font-details">
+                <p>Font dengan keterbacaan tinggi pada layar komputer.</p>
+                </div>
+                <div class="tags">
+                <span class="tag">Web-safe</span>
+                <span class="tag">Readable</span>
+                </div>
+            </div>
+            </div>
+
+            <!-- Font 6: Comic Sans MS -->
+            <div class="font-card">
+            <div class="card-header">
+                <h3 class="font-title">Comic Sans MS</h3>
+            </div>
+            <div class="card-body">
+                <div class="font-sample comic">Aa Bb Cc 123</div>
+                <div class="font-sample-text comic">The quick brown fox jumps over the lazy dog.</div>
+                <div class="font-details">
+                <p>Font informal dengan gaya yang kasual.</p>
+                </div>
+                <div class="tags">
+                <span class="tag">Casual</span>
+                <span class="tag">Handwriting</span>
+                <span class="tag">Playful</span>
+                </div>
+            </div>
+            </div>
+
+            <!-- Font 7: Georgia -->
+            <div class="font-card">
+            <div class="card-header">
+                <h3 class="font-title">Georgia</h3>
+            </div>
+            <div class="card-body">
+                <div class="font-sample georgia">Aa Bb Cc 123</div>
+                <div class="font-sample-text georgia">The quick brown fox jumps over the lazy dog.</div>
+                <div class="font-details">
+                <p>Font serif dirancang sederhana dan jelas.</p>
+                </div>
+                <div class="tags">
+                <span class="tag">Web-safe</span>
+                <span class="tag">Elegant</span>
+                </div>
+            </div>
+            </div>
+
+            <!-- Font 8: Tahoma -->
+            <div class="font-card">
+            <div class="card-header">
+                <h3 class="font-title">Tahoma</h3>
+            </div>
+            <div class="card-body">
+                <div class="font-sample tahoma">Aa Bb Cc 123</div>
+                <div class="font-sample-text tahoma">The quick brown fox jumps over the lazy dog.</div>
+                <div class="font-details">
+                <p>Font kompak yang dapat dibaca dengan baik pada ukuran kecil.</p>
+                </div>
+                <div class="tags">
+                <span class="tag">Compact</span>
+                <span class="tag">Technical</span>
+                </div>
+            </div>
+            </div>
+
+            <!-- Font 9: Century Gothic -->
+            <div class="font-card">
+            <div class="card-header">
+                <h3 class="font-title">Century Gothic</h3>
+            </div>
+            <div class="card-body">
+                <div class="font-sample century">Aa Bb Cc 123</div>
+                <div class="font-sample-text century">The quick brown fox jumps over the lazy dog.</div>
+                <div class="font-details">
+                <p>Font geometris dengan gaya modern dan minimalis.</p>
+                </div>
+                <div class="tags">
+                <span class="tag">Geometric</span>
+                <span class="tag">Modern</span>
+                </div>
+            </div>
+            </div>
+
+            <!-- Font 10: Courier New -->
+            <div class="font-card">
+            <div class="card-header">
+                <h3 class="font-title">Courier New</h3>
+            </div>
+            <div class="card-body">
+                <div class="font-sample courier">Aa Bb Cc 123</div>
+                <div class="font-sample-text courier">The quick brown fox jumps over the lazy dog.</div>
+                <div class="font-details">
+                <p>Font monospace yang sering digunakan untuk kode pemrograman.</p>
+                </div>
+                <div class="tags">
+                <span class="tag">Technical</span>
+                <span class="tag">Coding</span>
+                </div>
+            </div>
+            </div>
+        </div>
         </div>
 
-        <!-- Font 2: Arial -->
-        <div class="font-card">
-          <div class="card-header">
-            <h3 class="font-title">Arial</h3>
-          </div>
-          <div class="card-body">
-            <div class="font-sample arial">Aa Bb Cc 123</div>
-            <div class="font-sample-text arial">The quick brown fox jumps over the lazy dog.</div>
-            <div class="font-details">
-              <p>Font yang sangat jelas dan sederhana.</p>
-            </div>
-            <div class="tags">
-              <span class="tag">Sans-serif</span>
-              <span class="tag">Web-safe</span>
-              <span class="tag">Modern</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Font 3: Helvetica -->
-        <div class="font-card">
-          <div class="card-header">
-            <h3 class="font-title">Helvetica</h3>
-          </div>
-          <div class="card-body">
-            <div class="font-sample helvetica">Aa Bb Cc 123</div>
-            <div class="font-sample-text helvetica">The quick brown fox jumps over the lazy dog.</div>
-            <div class="font-details">
-              <p>Font yang banyak digunakan dalam desain grafis.</p>
-            </div>
-            <div class="tags">
-              <span class="tag">Sans-serif</span>
-              <span class="tag">Desain</span>
-              <span class="tag">Profesional</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Font 4: Calibri -->
-        <div class="font-card">
-          <div class="card-header">
-            <h3 class="font-title">Calibri</h3>
-          </div>
-          <div class="card-body">
-            <div class="font-sample calibri">Aa Bb Cc 123</div>
-            <div class="font-sample-text calibri">The quick brown fox jumps over the lazy dog.</div>
-            <div class="font-details">
-              <p>Font default dari Microsoft Office dengan bentuk modern.</p>
-            </div>
-            <div class="tags">
-              <span class="tag">Sans-serif</span>
-              <span class="tag">Bisnis</span>
-              <span class="tag">Office</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Font 5: Verdana -->
-        <div class="font-card">
-          <div class="card-header">
-            <h3 class="font-title">Verdana</h3>
-          </div>
-          <div class="card-body">
-            <div class="font-sample verdana">Aa Bb Cc 123</div>
-            <div class="font-sample-text verdana">The quick brown fox jumps over the lazy dog.</div>
-            <div class="font-details">
-              <p>Font dengan keterbacaan tinggi pada layar komputer.</p>
-            </div>
-            <div class="tags">
-              <span class="tag">Sans-serif</span>
-              <span class="tag">Web-safe</span>
-              <span class="tag">Readable</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Font 6: Comic Sans MS -->
-        <div class="font-card">
-          <div class="card-header">
-            <h3 class="font-title">Comic Sans MS</h3>
-          </div>
-          <div class="card-body">
-            <div class="font-sample comic">Aa Bb Cc 123</div>
-            <div class="font-sample-text comic">The quick brown fox jumps over the lazy dog.</div>
-            <div class="font-details">
-              <p>Font informal dengan gaya yang kasual.</p>
-            </div>
-            <div class="tags">
-              <span class="tag">Casual</span>
-              <span class="tag">Handwriting</span>
-              <span class="tag">Playful</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Font 7: Georgia -->
-        <div class="font-card">
-          <div class="card-header">
-            <h3 class="font-title">Georgia</h3>
-          </div>
-          <div class="card-body">
-            <div class="font-sample georgia">Aa Bb Cc 123</div>
-            <div class="font-sample-text georgia">The quick brown fox jumps over the lazy dog.</div>
-            <div class="font-details">
-              <p>Font serif dirancang sederhana dan jelas.</p>
-            </div>
-            <div class="tags">
-              <span class="tag">Serif</span>
-              <span class="tag">Web-safe</span>
-              <span class="tag">Elegant</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Font 8: Tahoma -->
-        <div class="font-card">
-          <div class="card-header">
-            <h3 class="font-title">Tahoma</h3>
-          </div>
-          <div class="card-body">
-            <div class="font-sample tahoma">Aa Bb Cc 123</div>
-            <div class="font-sample-text tahoma">The quick brown fox jumps over the lazy dog.</div>
-            <div class="font-details">
-              <p>Font kompak yang dapat dibaca dengan baik pada ukuran kecil.</p>
-            </div>
-            <div class="tags">
-              <span class="tag">Sans-serif</span>
-              <span class="tag">Compact</span>
-              <span class="tag">Technical</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Font 9: Century Gothic -->
-        <div class="font-card">
-          <div class="card-header">
-            <h3 class="font-title">Century Gothic</h3>
-          </div>
-          <div class="card-body">
-            <div class="font-sample century">Aa Bb Cc 123</div>
-            <div class="font-sample-text century">The quick brown fox jumps over the lazy dog.</div>
-            <div class="font-details">
-              <p>Font geometris dengan gaya modern dan minimalis.</p>
-            </div>
-            <div class="tags">
-              <span class="tag">Sans-serif</span>
-              <span class="tag">Geometric</span>
-              <span class="tag">Modern</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Font 10: Courier New -->
-        <div class="font-card">
-          <div class="card-header">
-            <h3 class="font-title">Courier New</h3>
-          </div>
-          <div class="card-body">
-            <div class="font-sample courier">Aa Bb Cc 123</div>
-            <div class="font-sample-text courier">The quick brown fox jumps over the lazy dog.</div>
-            <div class="font-details">
-              <p>Font monospace yang sering digunakan untuk kode pemrograman.</p>
-            </div>
-            <div class="tags">
-              <span class="tag">Monospace</span>
-              <span class="tag">Technical</span>
-              <span class="tag">Coding</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <footer>
-      <p>&copy; 2025 Font Showcase. All rights reserved.</p>
-    </footer>
-  </body>
-</html>
+        <footer>
+        <p>&copy; 2025 Font Showcase. All rights reserved.</p>
+        </footer>
+    </body>
+    </html>
