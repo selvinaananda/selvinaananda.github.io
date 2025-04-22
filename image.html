@@ -1,411 +1,411 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Image Format</title>
-    <style>
-      :root {
-        --deep-burgundy: #570219;
-        --medium-burgundy: #7c0324;
-        --light-burgundy: #9a0430;
-        --cream: #f8f6ed;
-        --light-cream: #fdfcf8;
-        --dark-cream: #e3e0d8;
-        --accent-glow: 0 0 5px rgba(87, 2, 25, 0.7);
-      }
-
-      body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: var(--cream);
-        color: #333;
-      }
-
-      header {
-        background: linear-gradient(135deg, var(--deep-burgundy), var(--medium-burgundy));
-        color: white;
-        text-align: center;
-        padding: 2rem 0;
-        box-shadow: 0 4px 12px rgba(87, 2, 25, 0.3);
-      }
-
-      h1 {
-        margin: 0;
-        font-size: 2.5rem;
-        text-shadow: var(--accent-glow);
-      }
-
-      .subtitle {
-        font-style: italic;
-        color: white;
-        margin-top: 0.5rem;
-        text-shadow: var(--accent-glow);
-      }
-
-      .container {
-        max-width: 1200px;
-        margin: 2rem auto;
-        padding: 0 1rem;
-      }
-
-      .image-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-        gap: 2rem;
-        margin-top: 2rem;
-      }
-
-      .image-card {
-        background-color: white;
-        border-radius: 10px;
-        overflow: hidden;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        border: 1px solid var(--dark-cream);
-      }
-
-      .image-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 16px rgba(87, 2, 25, 0.4), 0 0 20px rgba(248, 246, 237, 0.3);
-      }
-
-      .card-header {
-        background: linear-gradient(to right, var(--medium-burgundy), var(--deep-burgundy));
-        color: white;
-        padding: 1rem;
-      }
-
-      .card-body {
-        padding: 1.5rem;
-      }
-
-      .format-title {
-        margin: 0;
-        font-size: 1.3rem;
-        text-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
-      }
-
-      .image-preview {
-        width: 100%;
-        height: 200px;
-        background-color: var(--light-cream);
-        border: 1px dashed var(--deep-burgundy);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 1rem 0;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .image-preview img {
-        max-width: 100%;
-        max-height: 100%;
-        object-fit: contain;
-      }
-
-      .image-upload {
-        margin: 1rem 0;
-      }
-
-      .format-details {
-        margin-bottom: 1rem;
-      }
-
-      .tag {
-        display: inline-block;
-        background-color: var(--light-cream);
-        color: var(--deep-burgundy);
-        padding: 0.3rem 0.8rem;
-        border-radius: 20px;
-        font-size: 0.8rem;
-        margin-right: 0.5rem;
-        margin-bottom: 0.5rem;
-        border: 1px solid var(--deep-burgundy);
-      }
-
-      .upload-btn-wrapper {
-        position: relative;
-        overflow: hidden;
-        display: inline-block;
-        cursor: pointer;
-      }
-
-      .btn {
-        display: inline-block;
-        background-color: var(--medium-burgundy);
-        color: white;
-        text-decoration: none;
-        padding: 0.6rem 1.2rem;
-        border-radius: 5px;
-        font-weight: bold;
-        transition: all 0.3s ease;
-        box-shadow: 0 0 8px rgba(87, 2, 25, 0.5);
-        border: none;
-        cursor: pointer;
-      }
-
-      .btn:hover {
-        background-color: var(--deep-burgundy);
-        box-shadow: 0 0 12px rgba(248, 246, 237, 0.8);
-        transform: scale(1.05);
-      }
-
-      .upload-btn-wrapper input[type="file"] {
-        font-size: 100px;
-        position: absolute;
-        left: 0;
-        top: 0;
-        opacity: 0;
-        cursor: pointer;
-      }
-
-      .file-info {
-        margin-top: 0.5rem;
-        font-size: 0.9rem;
-        color: #666;
-      }
-
-      footer {
-        background: linear-gradient(135deg, var(--deep-burgundy), var(--medium-burgundy));
-        color: white;
-        text-align: center;
-        padding: 1.5rem 0;
-        margin-top: 3rem;
-      }
-
-      h2 {
-        position: relative;
-        display: inline-block;
-        padding-bottom: 5px;
-        color: var(--deep-burgundy);
-      }
-
-      h2:after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 3px;
-        background: linear-gradient(to right, var(--deep-burgundy), var(--medium-burgundy));
-        box-shadow: var(--accent-glow);
-      }
-
-      /* Add responsive design */
-      @media (max-width: 768px) {
-        .image-grid {
-          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Image Format</title>
+        <style>
+        :root {
+            --deep-burgundy: #570219;
+            --medium-burgundy: #7c0324;
+            --light-burgundy: #9a0430;
+            --cream: #f8f6ed;
+            --light-cream: #fdfcf8;
+            --dark-cream: #e3e0d8;
+            --accent-glow: 0 0 5px rgba(87, 2, 25, 0.7);
         }
-      }
 
-      @media (max-width: 480px) {
-        .image-grid {
-          grid-template-columns: 1fr;
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--cream);
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--deep-burgundy), var(--medium-burgundy));
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            box-shadow: 0 4px 12px rgba(87, 2, 25, 0.3);
         }
 
         h1 {
-          font-size: 2rem;
+            margin: 0;
+            font-size: 2.5rem;
+            text-shadow: var(--accent-glow);
         }
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <h1>Image Format Showcase</h1>
-      <p class="subtitle">10 Format Gambar</p>
-    </header>
 
-    <div class="container">
-      <h2>Showcase Image</h2>
+        .subtitle {
+            font-style: italic;
+            color: white;
+            margin-top: 0.5rem;
+            text-shadow: var(--accent-glow);
+        }
 
-      <div class="image-grid">
-        <!-- Format 1: JPEG -->
-        <div class="image-card">
-          <div class="card-header">
-            <h3 class="format-title">JPEG / JPG</h3>
-          </div>
-          <div class="card-body">
-            <div class="image-preview" id="jpeg-preview">
-              <img src="img/f1.jpg" alt="logo" />
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .image-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--dark-cream);
+        }
+
+        .image-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(87, 2, 25, 0.4), 0 0 20px rgba(248, 246, 237, 0.3);
+        }
+
+        .card-header {
+            background: linear-gradient(to right, var(--medium-burgundy), var(--deep-burgundy));
+            color: white;
+            padding: 1rem;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .format-title {
+            margin: 0;
+            font-size: 1.3rem;
+            text-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
+        }
+
+        .image-preview {
+            width: 100%;
+            height: 200px;
+            background-color: var(--light-cream);
+            border: 1px dashed var(--deep-burgundy);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 1rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .image-preview img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .image-upload {
+            margin: 1rem 0;
+        }
+
+        .format-details {
+            margin-bottom: 1rem;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: var(--light-cream);
+            color: var(--deep-burgundy);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            border: 1px solid var(--deep-burgundy);
+        }
+
+        .upload-btn-wrapper {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--medium-burgundy);
+            color: white;
+            text-decoration: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 8px rgba(87, 2, 25, 0.5);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--deep-burgundy);
+            box-shadow: 0 0 12px rgba(248, 246, 237, 0.8);
+            transform: scale(1.05);
+        }
+
+        .upload-btn-wrapper input[type="file"] {
+            font-size: 100px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .file-info {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        footer {
+            background: linear-gradient(135deg, var(--deep-burgundy), var(--medium-burgundy));
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 3rem;
+        }
+
+        h2 {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 5px;
+            color: var(--deep-burgundy);
+        }
+
+        h2:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, var(--deep-burgundy), var(--medium-burgundy));
+            box-shadow: var(--accent-glow);
+        }
+
+        /* Add responsive design */
+        @media (max-width: 768px) {
+            .image-grid {
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+
+        @media (max-width: 480px) {
+            .image-grid {
+            grid-template-columns: 1fr;
+            }
+
+            h1 {
+            font-size: 2rem;
+            }
+        }
+        </style>
+    </head>
+    <body>
+        <header>
+        <h1>Image Format Showcase</h1>
+        <p class="subtitle">10 Format Gambar</p>
+        </header>
+
+        <div class="container">
+        <h2>Showcase Image</h2>
+
+        <div class="image-grid">
+            <!-- Format 1: JPEG -->
+            <div class="image-card">
+            <div class="card-header">
+                <h3 class="format-title">JPEG / JPG</h3>
             </div>
-            <div class="img">
-              <div class="upload-btn-wrapper">
-                <input type="file" accept=".jpg,.jpeg" onchange="previewImage(this, 'jpeg-preview')" />
-              </div>
-              <div class="file-info" id="jpeg-info"></div>
+            <div class="card-body">
+                <div class="image-preview" id="jpeg-preview">
+                <img src="img/f1.jpg" alt="logo" />
+                </div>
+                <div class="img">
+                <div class="upload-btn-wrapper">
+                    <input type="file" accept=".jpg,.jpeg" onchange="previewImage(this, 'jpeg-preview')" />
+                </div>
+                <div class="file-info" id="jpeg-info"></div>
+                </div>
             </div>
-          </div>
+            </div>
+
+            <!-- Format 2: PNG -->
+            <div class="image-card">
+            <div class="card-header">
+                <h3 class="format-title">PNG</h3>
+            </div>
+            <div class="card-body">
+                <div class="image-preview" id="png-preview">
+                <img src="img/f1.png" alt="Preview gambar png" />
+                </div>
+                <div class="image-upload">
+                <div class="upload-btn-wrapper">
+                    <input type="file" accept=".png" onchange="previewImage(this, 'png-preview')" />
+                </div>
+                <div class="file-info" id="png-info"></div>
+                </div>
+            </div>
+            </div>
+
+            <!-- Format 3: GIF -->
+            <div class="image-card">
+            <div class="card-header">
+                <h3 class="format-title">GIF</h3>
+            </div>
+            <div class="card-body">
+                <div class="image-preview" id="gif-preview">
+                <img src="img/f1.gif" alt="Preview gambar gif" />
+                </div>
+                <div class="image-upload">
+                <div class="upload-btn-wrapper">
+                    <input type="file" accept=".gif" onchange="previewImage(this, 'gif-preview')" />
+                </div>
+                <div class="file-info" id="gif-info"></div>
+                </div>
+            </div>
+            </div>
+
+            <!-- Format 4: WebP -->
+            <div class="image-card">
+            <div class="card-header">
+                <h3 class="format-title">WebP</h3>
+            </div>
+            <div class="card-body">
+                <div class="image-preview" id="webp-preview">
+                <img src="img/f1.webp" alt="Preview gambar WebP" />
+                </div>
+                <div class="image-upload">
+                <div class="upload-btn-wrapper">
+                    <input type="file" accept=".webp" onchange="previewImage(this, 'webp-preview')" />
+                </div>
+                <div class="file-info" id="webp-info"></div>
+                </div>
+            </div>
+            </div>
+
+            <!-- Format 5: SVG -->
+            <div class="image-card">
+            <div class="card-header">
+                <h3 class="format-title">SVG</h3>
+            </div>
+            <div class="card-body">
+                <div class="image-preview" id="svg-preview">
+                <img src="img/f1.svg" alt="Preview gambar svg" />
+                </div>
+                <div class="image-upload">
+                <div class="upload-btn-wrapper">
+                    <input type="file" accept=".svg" onchange="previewImage(this, 'svg-preview')" />
+                </div>
+                <div class="file-info" id="svg-info"></div>
+                </div>
+            </div>
+            </div>
+
+            <!-- Format 6: BMP -->
+            <div class="image-card">
+            <div class="card-header">
+                <h3 class="format-title">BMP</h3>
+            </div>
+            <div class="card-body">
+                <div class="image-preview" id="bmp-preview">
+                <img src="img/f1.bmp" alt="Preview gambar bmp" />
+                </div>
+                <div class="image-upload">
+                <div class="upload-btn-wrapper">
+                    <input type="file" accept=".bmp" onchange="previewImage(this, 'bmp-preview')" />
+                </div>
+                <div class="file-info" id="bmp-info"></div>
+                </div>
+            </div>
+            </div>
+
+            <!-- Format 7: TIFF -->
+            <div class="image-card">
+            <div class="card-header">
+                <h3 class="format-title">TIFF</h3>
+            </div>
+            <div class="card-body">
+                <div class="image-preview" id="tiff-preview">
+                <img src="img/f1.tiff" alt="Preview gambar tiff" />
+                </div>
+                <div class="image-upload">
+                <div class="upload-btn-wrapper">
+                    <input type="file" accept=".tiff,.tif" onchange="previewImage(this, 'tiff-preview')" />
+                </div>
+                <div class="file-info" id="tiff-info"></div>
+                </div>
+            </div>
+            </div>
+
+            <!-- Format 8: PSD -->
+            <div class="image-card">
+            <div class="card-header">
+                <h3 class="format-title">PSD</h3>
+            </div>
+            <div class="card-body">
+                <div class="image-preview" id="psd-preview">
+                <img src="img/f1.psd" alt="Preview gambar psd" />
+                </div>
+                <div class="image-upload">
+                <div class="upload-btn-wrapper">
+                    <input type="file" accept=".psd" onchange="previewImage(this, 'psd-preview')" />
+                </div>
+                <div class="file-info" id="psd-info"></div>
+                </div>
+            </div>
+            </div>
+
+            <!-- Format 9: RAW -->
+            <div class="image-card">
+            <div class="card-header">
+                <h3 class="format-title">RAW</h3>
+            </div>
+            <div class="card-body">
+                <div class="image-preview" id="raw-preview">
+                <img src="img/f1.raw" alt="Preview gambar raw" />
+                </div>
+                <div class="image-upload">
+                <div class="upload-btn-wrapper">
+                    <input type="file" accept=".raw" onchange="previewImage(this, 'raw-preview')" />
+                </div>
+                <div class="file-info" id="raw"></div>
+                </div>
+            </div>
+            </div>
+
+            <!-- Format 10: HEIF-->
+            <div class="image-card">
+            <div class="card-header">
+                <h3 class="format-title">HEIF</h3>
+            </div>
+            <div class="card-body">
+                <div class="image-preview" id="heif-preview">
+                <img src="img/f1.heif" alt="Preview gambar heif" />
+                </div>
+                <div class="image-upload">
+                <div class="upload-btn-wrapper">
+                    <input type="file" accept=".heif" onchange="previewImage(this, 'heif-preview')" />
+                </div>
+                <div class="file-info" id="heif-info"></div>
+                </div>
+            </div>
+            </div>
+        </div>
         </div>
 
-        <!-- Format 2: PNG -->
-        <div class="image-card">
-          <div class="card-header">
-            <h3 class="format-title">PNG</h3>
-          </div>
-          <div class="card-body">
-            <div class="image-preview" id="png-preview">
-              <img src="img/f1.png" alt="Preview gambar png" />
-            </div>
-            <div class="image-upload">
-              <div class="upload-btn-wrapper">
-                <input type="file" accept=".png" onchange="previewImage(this, 'png-preview')" />
-              </div>
-              <div class="file-info" id="png-info"></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Format 3: GIF -->
-        <div class="image-card">
-          <div class="card-header">
-            <h3 class="format-title">GIF</h3>
-          </div>
-          <div class="card-body">
-            <div class="image-preview" id="gif-preview">
-              <img src="img/f1.gif" alt="Preview gambar gif" />
-            </div>
-            <div class="image-upload">
-              <div class="upload-btn-wrapper">
-                <input type="file" accept=".gif" onchange="previewImage(this, 'gif-preview')" />
-              </div>
-              <div class="file-info" id="gif-info"></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Format 4: WebP -->
-        <div class="image-card">
-          <div class="card-header">
-            <h3 class="format-title">WebP</h3>
-          </div>
-          <div class="card-body">
-            <div class="image-preview" id="webp-preview">
-              <img src="img/f1.webp" alt="Preview gambar WebP" />
-            </div>
-            <div class="image-upload">
-              <div class="upload-btn-wrapper">
-                <input type="file" accept=".webp" onchange="previewImage(this, 'webp-preview')" />
-              </div>
-              <div class="file-info" id="webp-info"></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Format 5: SVG -->
-        <div class="image-card">
-          <div class="card-header">
-            <h3 class="format-title">SVG</h3>
-          </div>
-          <div class="card-body">
-            <div class="image-preview" id="svg-preview">
-              <img src="img/f1.svg" alt="Preview gambar svg" />
-            </div>
-            <div class="image-upload">
-              <div class="upload-btn-wrapper">
-                <input type="file" accept=".svg" onchange="previewImage(this, 'svg-preview')" />
-              </div>
-              <div class="file-info" id="svg-info"></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Format 6: BMP -->
-        <div class="image-card">
-          <div class="card-header">
-            <h3 class="format-title">BMP</h3>
-          </div>
-          <div class="card-body">
-            <div class="image-preview" id="bmp-preview">
-              <img src="img/f1.bmp" alt="Preview gambar bmp" />
-            </div>
-            <div class="image-upload">
-              <div class="upload-btn-wrapper">
-                <input type="file" accept=".bmp" onchange="previewImage(this, 'bmp-preview')" />
-              </div>
-              <div class="file-info" id="bmp-info"></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Format 7: TIFF -->
-        <div class="image-card">
-          <div class="card-header">
-            <h3 class="format-title">TIFF</h3>
-          </div>
-          <div class="card-body">
-            <div class="image-preview" id="tiff-preview">
-              <img src="img/f1.tiff" alt="Preview gambar tiff" />
-            </div>
-            <div class="image-upload">
-              <div class="upload-btn-wrapper">
-                <input type="file" accept=".tiff,.tif" onchange="previewImage(this, 'tiff-preview')" />
-              </div>
-              <div class="file-info" id="tiff-info"></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Format 8: PSD -->
-        <div class="image-card">
-          <div class="card-header">
-            <h3 class="format-title">PSD</h3>
-          </div>
-          <div class="card-body">
-            <div class="image-preview" id="psd-preview">
-              <img src="img/f1.psd" alt="Preview gambar psd" />
-            </div>
-            <div class="image-upload">
-              <div class="upload-btn-wrapper">
-                <input type="file" accept=".psd" onchange="previewImage(this, 'psd-preview')" />
-              </div>
-              <div class="file-info" id="psd-info"></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Format 9: RAW -->
-        <div class="image-card">
-          <div class="card-header">
-            <h3 class="format-title">RAW</h3>
-          </div>
-          <div class="card-body">
-            <div class="image-preview" id="raw-preview">
-              <img src="img/f1.raw" alt="Preview gambar raw" />
-            </div>
-            <div class="image-upload">
-              <div class="upload-btn-wrapper">
-                <input type="file" accept=".raw" onchange="previewImage(this, 'raw-preview')" />
-              </div>
-              <div class="file-info" id="raw"></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Format 10: HEIF-->
-        <div class="image-card">
-          <div class="card-header">
-            <h3 class="format-title">HEIF</h3>
-          </div>
-          <div class="card-body">
-            <div class="image-preview" id="heif-preview">
-              <img src="img/f1.heif" alt="Preview gambar heif" />
-            </div>
-            <div class="image-upload">
-              <div class="upload-btn-wrapper">
-                <input type="file" accept=".heif" onchange="previewImage(this, 'heif-preview')" />
-              </div>
-              <div class="file-info" id="heif-info"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <footer>
-      <p>&copy; Created by Selviana Ananda. All rights reserved.</p>
-    </footer>
-  </body>
-</html>
+        <footer>
+        <p>&copy; Created by Selviana Ananda. All rights reserved.</p>
+        </footer>
+    </body>
+    </html>
