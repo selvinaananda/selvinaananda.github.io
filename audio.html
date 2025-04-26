@@ -1,479 +1,448 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Audio Format</title>
-    <style>
-    :root {
-        --deep-purple: #763f4a; /* Main color */
-        --medium-purple: #8b4f5b; /* Medium shade */
-        --light-purple: #a05d6a; /* Lighter shade */
-        --cream: #e1dbd7; /* Background color */
-        --light-cream: #f0eceb;
-        --dark-cream: #d0cac6;
-        --accent-glow: 0 0 5px rgba(118, 63, 74, 0.7);
-    }
-
-    body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: var(--cream);
-        color: #333;
-    }
-
-    header {
-        background: linear-gradient(135deg, var(--deep-purple), var(--medium-purple));
-        color: white;
-        text-align: center;
-        padding: 2rem 0;
-        box-shadow: 0 4px 12px rgba(118, 63, 74, 0.3);
-    }
-
-    h1 {
-        margin: 0;
-        font-size: 2.5rem;
-        text-shadow: var(--accent-glow);
-    }
-
-    .subtitle {
-        font-style: italic;
-        color: white;
-        margin-top: 0.5rem;
-        text-shadow: var(--accent-glow);
-    }
-
-    .container {
-        max-width: 1200px;
-        margin: 2rem auto;
-        padding: 0 1rem;
-    }
-
-    .audio-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-        gap: 2rem;
-        margin-top: 2rem;
-    }
-
-    .audio-card {
-        background-color: white;
-        border-radius: 10px;
-        overflow: hidden;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        border: 1px solid var(--dark-cream);
-    }
-
-    .audio-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 16px rgba(118, 63, 74, 0.4), 0 0 20px rgba(225, 219, 215, 0.3);
-    }
-
-    .card-header {
-        background: linear-gradient(to right, var(--medium-purple), var(--deep-purple));
-        color: white;
-        padding: 1rem;
-    }
-
-    .card-body {
-        padding: 1.5rem;
-    }
-
-    .format-title {
-        margin: 0;
-        font-size: 1.3rem;
-        text-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
-    }
-
-    .audio-player {
-        width: 100%;
-        margin: 1rem 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .audio-player audio {
-        width: 100%;
-        margin-top: 1rem;
-    }
-
-    .audio-icon {
-        font-size: 3rem;
-        color: var(--deep-purple);
-        margin-bottom: 0.5rem;
-    }
-
-    .audio-upload {
-        margin: 1rem 0;
-    }
-
-    .format-details {
-        margin-bottom: 1rem;
-    }
-
-    .tag {
-        display: inline-block;
-        background-color: var(--light-cream);
-        color: var(--deep-purple);
-        padding: 0.3rem 0.8rem;
-        border-radius: 20px;
-        font-size: 0.8rem;
-        margin-right: 0.5rem;
-        margin-bottom: 0.5rem;
-        border: 1px solid var(--deep-purple);
-    }
-
-    .upload-btn-wrapper {
-        position: relative;
-        overflow: hidden;
-        display: inline-block;
-        cursor: pointer;
-    }
-
-    .btn {
-        display: inline-block;
-        background-color: var(--medium-purple);
-        color: white;
-        text-decoration: none;
-        padding: 0.6rem 1.2rem;
-        border-radius: 5px;
-        font-weight: bold;
-        transition: all 0.3s ease;
-        box-shadow: 0 0 8px rgba(118, 63, 74, 0.5);
-        border: none;
-        cursor: pointer;
-    }
-
-    .btn:hover {
-        background-color: var(--deep-purple);
-        box-shadow: 0 0 12px rgba(225, 219, 215, 0.8);
-        transform: scale(1.05);
-    }
-
-    .upload-btn-wrapper input[type="file"] {
-        font-size: 100px;
-        position: absolute;
-        left: 0;
-        top: 0;
-        opacity: 0;
-        cursor: pointer;
-    }
-
-    .file-info {
-        margin-top: 0.5rem;
-        font-size: 0.9rem;
-        color: #666;
-    }
-
-    footer {
-        background: linear-gradient(135deg, var(--deep-purple), var(--medium-purple));
-        color: white;
-        text-align: center;
-        padding: 1.5rem 0;
-        margin-top: 3rem;
-    }
-
-    h2 {
-        position: relative;
-        display: inline-block;
-        padding-bottom: 5px;
-        color: var(--deep-purple);
-    }
-
-    h2:after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 3px;
-        background: linear-gradient(to right, var(--deep-purple), var(--medium-purple));
-        box-shadow: var(--accent-glow);
-    }
-
-    /* Add responsive design */
-    @media (max-width: 768px) {
-        .audio-grid {
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Audio Format</title>
+        <style>
+        :root {
+            --deep-purple: #763f4a; /* Main color */
+            --medium-purple: #8b4f5b; /* Medium shade */
+            --light-purple: #a05d6a; /* Lighter shade */
+            --cream: #e1dbd7; /* Background color */
+            --light-cream: #f0eceb;
+            --dark-cream: #d0cac6;
+            --accent-glow: 0 0 5px rgba(118, 63, 74, 0.7);
         }
-    }
 
-    @media (max-width: 480px) {
-        .audio-grid {
-        grid-template-columns: 1fr;
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--cream);
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--deep-purple), var(--medium-purple));
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            box-shadow: 0 4px 12px rgba(118, 63, 74, 0.3);
         }
 
         h1 {
-        font-size: 2rem;
+            margin: 0;
+            font-size: 2.5rem;
+            text-shadow: var(--accent-glow);
         }
-    }
-    </style>
-</head>
-<body>
-    <header>
-    <h1>Audio Format Showcase</h1>
-    <p class="subtitle">10 Format Audio</p>
-    </header>
 
-    <div class="container">
-    <h2>Showcase Audio</h2>
-
-    <div class="audio-grid">
-        <!-- Format 1: MP3 -->
-        <div class="audio-card">
-        <div class="card-header">
-            <h3 class="format-title">MP3</h3>
-        </div>
-        <div class="card-body">
-            <p class="format-details">Format audio yang paling umum digunakan karena kompresi yang baik dan kualitas suara yang memadai.</p>
-            <div class="audio-player" id="mp3-player">
-            <div class="audio-icon">🎵</div>
-            <audio controls>
-                <source src="audio/APLMate.com - Like the Movies - Laufey.mp3" type="audio/mpeg" />
-                Browser Anda tidak mendukung tag audio.
-            </audio>
-            </div>
-            <div class="audio-upload">
-            <div class="upload-btn-wrapper">
-                <input type="file" accept=".mp3" onchange="previewAudio(this, 'mp3-player')" />
-            </div>
-            <div class="file-info" id="mp3-info"></div>
-            </div>
-        </div>
-        </div>
-
-        <!-- Format 2: WAV -->
-        <div class="audio-card">
-        <div class="card-header">
-            <h3 class="format-title">WAV</h3>
-        </div>
-        <div class="card-body">
-            <p class="format-details">Format audio tanpa kompresi dengan kualitas yang sangat baik tetapi ukuran file besar.</p>
-            <div class="audio-player" id="wav-player">
-            <div class="audio-icon">🎵</div>
-            <audio controls>
-                <source src="audio/audio.wav" type="audio/wav" />
-                Browser Anda tidak mendukung tag audio.
-            </audio>
-            </div>
-            <div class="audio-upload">
-            <div class="upload-btn-wrapper">
-                <input type="file" accept=".wav" onchange="previewAudio(this, 'wav-player')" />
-            </div>
-            <div class="file-info" id="wav-info"></div>
-            </div>
-        </div>
-        </div>
-
-        <!-- Format 3: AAC -->
-        <div class="audio-card">
-        <div class="card-header">
-            <h3 class="format-title">AAC</h3>
-        </div>
-        <div class="card-body">
-            <p class="format-details">Format yang dirancang untuk menggantikan MP3, dengan kualitas yang lebih baik pada ukuran file yang sama.</p>
-            <div class="audio-player" id="aac-player">
-            <div class="audio-icon">🎵</div>
-            <audio controls>
-                <source src="audio/audio.aac" type="audio/aac" />
-                Browser Anda tidak mendukung tag audio.
-            </audio>
-            </div>
-            <div class="audio-upload">
-            <div class="upload-btn-wrapper">
-                <input type="file" accept=".aac" onchange="previewAudio(this, 'aac-player')" />
-            </div>
-            <div class="file-info" id="aac-info"></div>
-            </div>
-        </div>
-        </div>
-
-        <!-- Format 4: FLAC -->
-        <div class="audio-card">
-        <div class="card-header">
-            <h3 class="format-title">FLAC</h3>
-        </div>
-        <div class="card-body">
-            <p class="format-details">Format kompresi tanpa kehilangan kualitas (lossless) yang populer di kalangan audiofil.</p>
-            <div class="audio-player" id="flac-player">
-            <div class="audio-icon">🎵</div>
-            <audio controls>
-                <source src="audio/audio.flac" type="audio/flac" />
-                Browser Anda tidak mendukung tag audio.
-            </audio>
-            </div>
-            <div class="audio-upload">
-            <div class="upload-btn-wrapper">
-                <input type="file" accept=".flac" onchange="previewAudio(this, 'flac-player')" />
-            </div>
-            <div class="file-info" id="flac-info"></div>
-            </div>
-        </div>
-        </div>
-
-        <!-- Format 5: OGG -->
-        <div class="audio-card">
-        <div class="card-header">
-            <h3 class="format-title">OGG</h3>
-        </div>
-        <div class="card-body">
-            <p class="format-details">Format open-source dengan kompresi yang baik, sering digunakan untuk streaming dan game.</p>
-            <div class="audio-player" id="ogg-player">
-            <div class="audio-icon">🎵</div>
-            <audio controls>
-                <source src="audio/audio.ogg" type="audio/ogg" />
-                Browser Anda tidak mendukung tag audio.
-            </audio>
-            </div>
-            <div class="audio-upload">
-            <div class="upload-btn-wrapper">
-                <input type="file" accept=".ogg" onchange="previewAudio(this, 'ogg-player')" />
-            </div>
-            <div class="file-info" id="ogg-info"></div>
-            </div>
-        </div>
-        </div>
-
-        <!-- Format 6: WMA -->
-        <div class="audio-card">
-        <div class="card-header">
-            <h3 class="format-title">WMA</h3>
-        </div>
-        <div class="card-body">
-            <p class="format-details">Format Microsoft dengan berbagai versi untuk kompresi audio yang berbeda.</p>
-            <div class="audio-player" id="wma-player">
-            <div class="audio-icon">🎵</div>
-            <audio controls>
-                <source src="audio/audio.wma" type="audio/x-ms-wma" />
-                Browser Anda tidak mendukung tag audio.
-            </audio>
-            </div>
-            <div class="audio-upload">
-            <div class="upload-btn-wrapper">
-                <input type="file" accept=".wma" onchange="previewAudio(this, 'wma-player')" />
-            </div>
-            <div class="file-info" id="wma-info"></div>
-            </div>
-        </div>
-        </div>
-
-        <!-- Format 7: AIFF -->
-        <div class="audio-card">
-        <div class="card-header">
-            <h3 class="format-title">AIFF</h3>
-        </div>
-        <div class="card-body">
-            <p class="format-details">Format audio tanpa kompresi yang dikembangkan oleh Apple, populer untuk produksi audio profesional.</p>
-            <div class="audio-player" id="aiff-player">
-            <div class="audio-icon">🎵</div>
-            <audio controls>
-                <source src="audio/audio.aiff" type="audio/aiff" />
-                Browser Anda tidak mendukung tag audio.
-            </audio>
-            </div>
-            <div class="audio-upload">
-            <div class="upload-btn-wrapper">
-                <input type="file" accept=".aiff,.aif" onchange="previewAudio(this, 'aiff-player')" />
-            </div>
-            <div class="file-info" id="aiff-info"></div>
-            </div>
-        </div>
-        </div>
-
-        <!-- Format 8: ALAC -->
-        <div class="audio-card">
-        <div class="card-header">
-            <h3 class="format-title">ALAC</h3>
-        </div>
-        <div class="card-body">
-            <p class="format-details">Apple Lossless Audio Codec, format kompresi tanpa kehilangan kualitas dari Apple.</p>
-            <div class="audio-player" id="alac-player">
-            <div class="audio-icon">🎵</div>
-            <audio controls>
-                <source src="audio/audio.m4a" type="audio/mp4" />
-                Browser Anda tidak mendukung tag audio.
-            </audio>
-            </div>
-            <div class="audio-upload">
-            <div class="upload-btn-wrapper">
-                <input type="file" accept=".m4a" onchange="previewAudio(this, 'alac-player')" />
-            </div>
-            <div class="file-info" id="alac-info"></div>
-            </div>
-        </div>
-        </div>
-
-        <!-- Format 9: OPUS -->
-        <div class="audio-card">
-        <div class="card-header">
-            <h3 class="format-title">OPUS</h3>
-        </div>
-        <div class="card-body">
-            <p class="format-details">Format terbaru dengan kompresi yang sangat baik, ideal untuk streaming dan komunikasi real-time.</p>
-            <div class="audio-player" id="opus-player">
-            <div class="audio-icon">🎵</div>
-            <audio controls>
-                <source src="audio/audio.opus" type="audio/opus" />
-                Browser Anda tidak mendukung tag audio.
-            </audio>
-            </div>
-            <div class="audio-upload">
-            <div class="upload-btn-wrapper">
-                <input type="file" accept=".opus" onchange="previewAudio(this, 'opus-player')" />
-            </div>
-            <div class="file-info" id="opus-info"></div>
-            </div>
-        </div>
-        </div>
-
-        <!-- Format 10: AMR -->
-        <div class="audio-card">
-        <div class="card-header">
-            <h3 class="format-title">AMR</h3>
-        </div>
-        <div class="card-body">
-            <p class="format-details">Format untuk kompresi suara ucapan, sering digunakan pada perangkat mobile.</p>
-            <div class="audio-player" id="amr-player">
-            <div class="audio-icon">🎵</div>
-            <audio controls>
-                <source src="audio/audio.amr" type="audio/amr" />
-                Browser Anda tidak mendukung tag audio.
-            </audio>
-            </div>
-            <div class="audio-upload">
-            <div class="upload-btn-wrapper">
-                <input type="file" accept=".amr" onchange="previewAudio(this, 'amr-player')" />
-            </div>
-            <div class="file-info" id="amr-info"></div>
-            </div>
-        </div>
-        </div>
-    </div>
-    </div>
-
-    <footer>
-    <p>&copy; Created by Selviana Ananda. All rights reserved.</p>
-    </footer>
-
-    <script>
-    function previewAudio(input, playerId) {
-        const player = document.getElementById(playerId);
-        const audioElement = player.querySelector("audio");
-        const fileInfo = document.getElementById(playerId.replace("-player", "-info"));
-
-        if (input.files && input.files[0]) {
-        const file = input.files[0];
-        const audioURL = URL.createObjectURL(file);
-
-        audioElement.src = audioURL;
-        audioElement.load();
-
-        fileInfo.textContent = `Nama: ${file.name} | Ukuran: ${(file.size / 1024).toFixed(2)} KB`;
+        .subtitle {
+            font-style: italic;
+            color: white;
+            margin-top: 0.5rem;
+            text-shadow: var(--accent-glow);
         }
-    }
-    </script>
-</body>
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .audio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .audio-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--dark-cream);
+        }
+
+        .audio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(118, 63, 74, 0.4), 0 0 20px rgba(225, 219, 215, 0.3);
+        }
+
+        .card-header {
+            background: linear-gradient(to right, var(--medium-purple), var(--deep-purple));
+            color: white;
+            padding: 1rem;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .format-title {
+            margin: 0;
+            font-size: 1.3rem;
+            text-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
+        }
+
+        .audio-player {
+            width: 100%;
+            margin: 1rem 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .audio-player audio {
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        .audio-icon {
+            font-size: 3rem;
+            color: var(--deep-purple);
+            margin-bottom: 0.5rem;
+        }
+
+        .audio-upload {
+            margin: 1rem 0;
+        }
+
+        .format-details {
+            margin-bottom: 1rem;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: var(--light-cream);
+            color: var(--deep-purple);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            border: 1px solid var(--deep-purple);
+        }
+
+        .upload-btn-wrapper {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--medium-purple);
+            color: white;
+            text-decoration: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 8px rgba(118, 63, 74, 0.5);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--deep-purple);
+            box-shadow: 0 0 12px rgba(225, 219, 215, 0.8);
+            transform: scale(1.05);
+        }
+
+        .upload-btn-wrapper input[type="file"] {
+            font-size: 100px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .file-info {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        footer {
+            background: linear-gradient(135deg, var(--deep-purple), var(--medium-purple));
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 3rem;
+        }
+
+        h2 {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 5px;
+            color: var(--deep-purple);
+        }
+
+        h2:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, var(--deep-purple), var(--medium-purple));
+            box-shadow: var(--accent-glow);
+        }
+
+        /* Add responsive design */
+        @media (max-width: 768px) {
+            .audio-grid {
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+
+        @media (max-width: 480px) {
+            .audio-grid {
+            grid-template-columns: 1fr;
+            }
+
+            h1 {
+            font-size: 2rem;
+            }
+        }
+        </style>
+    </head>
+    <body>
+        <header>
+        <h1>Audio Format Showcase</h1>
+        <p class="subtitle">10 Format Audio</p>
+        </header>
+
+        <div class="container">
+        <h2>Showcase Audio</h2>
+
+        <div class="audio-grid">
+            <!-- Format 1: MP3 -->
+            <div class="audio-card">
+            <div class="card-header">
+                <h3 class="format-title">MP3</h3>
+            </div>
+            <div class="card-body">
+                <p class="format-details">Format audio yang paling umum digunakan karena kompresi yang baik dan kualitas suara yang memadai.</p>
+                <div class="audio-player" id="mp3-player">
+                <div class="audio-icon">🎵</div>
+                <audio controls>
+                    <source src="audio/APLMate.com - Like the Movies - Laufey.mp3" type="audio/mpeg" />
+                    Browser Anda tidak mendukung tag audio.
+                </audio>
+                </div>
+                <div class="audio-upload">
+                <div class="upload-btn-wrapper">
+                    <input type="file" accept=".mp3" onchange="previewAudio(this, 'mp3-player')" />
+                </div>
+                <div class="file-info" id="mp3-info"></div>
+                </div>
+            </div>
+            </div>
+
+            <!-- Format 2: WAV -->
+            <div class="audio-card">
+            <div class="card-header">
+                <h3 class="format-title">WAV</h3>
+            </div>
+            <div class="card-body">
+                <p class="format-details">Format audio tanpa kompresi dengan kualitas yang sangat baik tetapi ukuran file besar.</p>
+                <div class="audio-player" id="mp3-player">
+                    <div class="audio-icon">🎵</div>
+                    <audio controls>
+                        <source src="audio/APLMate.com - Like the Movies - Laufey.mp3" type="audio/mpeg" />
+                        Browser Anda tidak mendukung tag audio.
+                    </audio>
+                    </div>
+                    <div class="audio-upload">
+                    <div class="upload-btn-wrapper">
+                        <input type="file" accept=".mp3" onchange="previewAudio(this, 'mp3-player')" />
+                    </div>
+                    <div class="file-info" id="mp3-info"></div>
+                    </div>
+            </div>
+            </div>
+
+            <!-- Format 3: AAC -->
+            <div class="audio-card">
+            <div class="card-header">
+                <h3 class="format-title">AAC</h3>
+            </div>
+            <div class="card-body">
+                <p class="format-details">Format yang dirancang untuk menggantikan MP3, dengan kualitas yang lebih baik pada ukuran file yang sama.</p>
+                <div class="audio-player" id="aac-player">
+                <div class="audio-icon">🎵</div>
+                <audio controls><source src="audio/audio.aac" type="audio/aac" />
+                    Browser Anda tidak mendukung tag audio.</audio>
+                </div>
+                <div class="audio-upload">
+                <div class="upload-btn-wrapper">
+                    <input type="file" accept=".aac" onchange="previewAudio(this, 'aac-player')" />
+                </div>
+                <div class="file-info" id="aac-info"></div>
+                </div>
+            </div>
+            </div>
+
+            <!-- Format 4: FLAC -->
+            <div class="audio-card">
+            <div class="card-header">
+                <h3 class="format-title">FLAC</h3>
+            </div>
+            <div class="card-body">
+                <p class="format-details">Format kompresi tanpa kehilangan kualitas (lossless) yang populer di kalangan audiofill.</p>
+                <div class="audio-player" id="flac-player">
+                <div class="audio-icon">🎵</div>
+                <audio controls>
+                    <source src="audio/audio.flac" type="audio/flac" />
+                    Browser Anda tidak mendukung tag audio.
+                </audio>
+                </div>
+                <div class="audio-upload">
+                <div class="upload-btn-wrapper">
+                    <input type="file" accept=".flac" onchange="previewAudio(this, 'flac-player')" />
+                </div>
+                <div class="file-info" id="flac-info"></div>
+                </div>
+            </div>
+            </div>
+
+            <!-- Format 5: OGG -->
+            <div class="audio-card">
+            <div class="card-header">
+                <h3 class="format-title">OGG</h3>
+            </div>
+            <div class="card-body">
+                <p class="format-details">Format open-source dengan kompresi yang baik, sering digunakan untuk streaming dan game.</p>
+                <div class="audio-player" id="ogg-player">
+                <div class="audio-icon">🎵</div>
+                <audio controls>
+                    <source src="audio/audio.ogg" type="audio/ogg" />
+                    Browser Anda tidak mendukung tag audio.
+                </audio>
+                </div>
+                <div class="audio-upload">
+                <div class="upload-btn-wrapper">
+                    <input type="file" accept=".ogg" onchange="previewAudio(this, 'ogg-player')" />
+                </div>
+                <div class="file-info" id="ogg-info"></div>
+                </div>
+            </div>
+            </div>
+
+            <!-- Format 6: WMA -->
+            <div class="audio-card">
+            <div class="card-header">
+                <h3 class="format-title">WMA</h3>
+            </div>
+            <div class="card-body">
+                <p class="format-details">Format Microsoft dengan berbagai versi untuk kompresi audio yang berbeda.</p>
+                <div class="audio-player" id="mp3-player">
+                    <div class="audio-icon">🎵</div>
+                    <audio controls>
+                        <source src="audio/APLMate.com - Like the Movies - Laufey.mp3" type="audio/mpeg" />
+                        Browser Anda tidak mendukung tag audio.
+                    </audio>
+                    </div>
+                    <div class="audio-upload">
+                    <div class="upload-btn-wrapper">
+                        <input type="file" accept=".mp3" onchange="previewAudio(this, 'mp3-player')" />
+                    </div>
+                    <div class="file-info" id="mp3-info"></div>
+                    </div>
+            </div>
+            </div>
+
+            <!-- Format 7: AIFF -->
+            <div class="audio-card">
+            <div class="card-header">
+                <h3 class="format-title">AIFF</h3>
+            </div>
+            <div class="card-body">
+                <p class="format-details">Format audio tanpa kompresi yang dikembangkan oleh Apple, populer untuk produksi audio profesional.</p>
+                <div class="audio-player" id="mp3-player">
+                    <div class="audio-icon">🎵</div>
+                    <audio controls>
+                        <source src="audio/APLMate.com - Like the Movies - Laufey.mp3" type="audio/mpeg" />
+                        Browser Anda tidak mendukung tag audio.
+                    </audio>
+                    </div>
+                    <div class="audio-upload">
+                    <div class="upload-btn-wrapper">
+                        <input type="file" accept=".mp3" onchange="previewAudio(this, 'mp3-player')" />
+                    </div>
+                    <div class="file-info" id="mp3-info"></div>
+                    </div>
+            </div>
+            </div>
+
+            <!-- Format 8: ALAC -->
+            <div class="audio-card">
+            <div class="card-header">
+                <h3 class="format-title">ALAC</h3>
+            </div>
+            <div class="card-body">
+                <p class="format-details">Apple Lossless Audio Codec, format kompresi tanpa kehilangan kualitas dari Apple.</p>
+                <div class="audio-player" id="mp3-player">
+                    <div class="audio-icon">🎵</div>
+                    <audio controls>
+                        <source src="audio/APLMate.com - Like the Movies - Laufey.mp3" type="audio/mpeg" />
+                        Browser Anda tidak mendukung tag audio.
+                    </audio>
+                    </div>
+                    <div class="audio-upload">
+                    <div class="upload-btn-wrapper">
+                        <input type="file" accept=".mp3" onchange="previewAudio(this, 'mp3-player')" />
+                    </div>
+                    <div class="file-info" id="mp3-info"></div>
+                    </div>
+            </div>
+            </div>
+
+            <!-- Format 9: OPUS -->
+            <div class="audio-card">
+            <div class="card-header">
+                <h3 class="format-title">OPUS</h3>
+            </div>
+            <div class="card-body">
+                <p class="format-details">Format terbaru dengan kompresi yang sangat baik, ideal untuk streaming dan komunikasi real-time.</p>
+                <div class="audio-player" id="mp3-player">
+                <div class="audio-icon">🎵</div>
+                <audio controls>
+                    <source src="audio/APLMate.com - Like the Movies - Laufey.mp3" type="audio/mpeg" />
+                    Browser Anda tidak mendukung tag audio.
+                </audio>
+                </div>
+                <div class="audio-upload">
+                <div class="upload-btn-wrapper">
+                    <input type="file" accept=".mp3" onchange="previewAudio(this, 'mp3-player')" />
+                </div>
+                <div class="file-info" id="mp3-info"></div>
+                </div>
+            </div>
+            </div>
+
+        <script>
+        function previewAudio(input, playerId) {
+            const player = document.getElementById(playerId);
+            const audioElement = player.querySelector("audio");
+            const fileInfo = document.getElementById(playerId.replace("-player", "-info"));
+
+            if (input.files && input.files[0]) {
+            const file = input.files[0];
+            const audioURL = URL.createObjectURL(file);
+
+            audioElement.src = audioURL;
+            audioElement.load();
+
+            fileInfo.textContent = `Nama: ${file.name} | Ukuran: ${(file.size / 1024).toFixed(2)} KB`;
+            }
+        }
+        </script>
+    </body>
 </html>
